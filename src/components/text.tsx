@@ -1,4 +1,45 @@
+import { animated, useSpring } from '@react-spring/web';
+
 function Text({ title = '' }) {
+    const randomTime = () => Math.floor(Math.random() * 1000) + 200; // 0.2 - 1.2 seconds
+
+    const slideDown = useSpring({
+        from: { transform: 'translateY(-100px)' },
+        to: { transform: 'translateY(0px)' },
+        config: { duration: randomTime() },
+    });
+
+    const slideUp = useSpring({
+        from: { transform: 'translateY(100px)' },
+        to: { transform: 'translateY(0px)' },
+        config: { duration: randomTime() },
+    });
+
+    const slideLeft = useSpring({
+        from: { transform: 'translateX(100px)' },
+        to: { transform: 'translateX(0px)' },
+        config: { duration: randomTime() },
+    });
+
+    const slideRight = useSpring({
+        from: { transform: 'translateX(-100px)' },
+        to: { transform: 'translateX(0px)' },
+        config: { duration: randomTime() },
+    });
+
+    const randomSlide = () => {
+        const random = Math.floor(Math.random() * 4);
+        if (random === 0) {
+            return slideDown;
+        } else if (random === 1) {
+            return slideUp;
+        }
+        if (random === 2) {
+            return slideLeft;
+        }
+        return slideRight;
+    };
+
     const bg = [
         'bg-red-500',
         'bg-yellow-500',
@@ -12,7 +53,8 @@ function Text({ title = '' }) {
     const random = () => Math.floor(Math.random() * bg.length);
 
     return (
-        <a
+        <animated.a
+            style={{ ...randomSlide() }}
             href={`/order?title=${title}`}
             className={`rounded-full
             hover:bg-transparent
@@ -25,7 +67,7 @@ function Text({ title = '' }) {
             } border-dashed border-1 border`}
         >
             {title}
-        </a>
+        </animated.a>
     );
 }
 

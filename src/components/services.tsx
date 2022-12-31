@@ -35,16 +35,18 @@ const services = [
 ];
 
 function Services() {
+    const randomTime = () => Math.floor(Math.random() * 1000) + 300; // 1 - 2 seconds
+
     const fade = useSpring({
         from: { opacity: 0 },
         to: { opacity: 1 },
-        config: { duration: 2000 },
+        config: { duration: randomTime() },
     });
 
     const slideDown = useSpring({
         from: { transform: 'translateY(-100px)' },
         to: { transform: 'translateY(0px)' },
-        config: { duration: 500 },
+        config: { duration: randomTime() },
     });
 
     return (
