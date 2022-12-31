@@ -15,6 +15,7 @@ function LazyLoadComponent({
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
+                    // @ts-ignore
                     observer.unobserve(element.current);
                 }
             });
@@ -22,10 +23,13 @@ function LazyLoadComponent({
         if (element.current) {
             observer.observe(element.current);
         }
+        // @ts-ignore
         observer.observe(element.current);
+        // @ts-ignore
         return () => observer.unobserve(element.current);
     }, []);
 
+    // @ts-ignore
     return <div ref={element}>{isVisible && children}</div>;
 }
 
