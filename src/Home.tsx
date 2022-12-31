@@ -3,7 +3,6 @@ import Navbar from './components/navbar';
 import Services from './components/services';
 import ShowCase from './components/show-case';
 import Team from './components/team';
-import Title from './components/title';
 
 function Home(): JSX.Element {
     return (
