@@ -31,7 +31,7 @@ function ShowcaseItem({
             className='w-full shadow-xl card'
         >
             <div className='p-1 text-left card-body'>
-                <h1 className='flex gap-2 p-2 mt-3 text-lg font-extrabold text-justify text-transparent uppercase bg-black rounded-lg bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
+                <h1 className='flex gap-2 p-2 mt-3 text-lg font-extrabold shadow-pink-500 shadow-sm text-justify text-transparent uppercase bg-black rounded-lg bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
                     <a target='_blank noreferrer' href={link}>
                         <YoutubeIcon />
                     </a>

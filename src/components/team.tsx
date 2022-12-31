@@ -1,59 +1,68 @@
+import { animated, useSpring } from '@react-spring/web';
 import { Faren, Sammi, Willy } from './images';
 
 function Team() {
+    const photoClass = `w-36 h-56 border border-[1px] shadow-sm hover:shadow-lg transition duration-75 ease-linear shadow-yellow-300 group-hover:scale-110 object-cover  rounded-lg group-hover:opacity-100 opacity-70 group-hover:shadow-pink-400`;
+
+    const slideRight = useSpring({
+        from: { transform: 'translateX(-100px)' },
+        to: { transform: 'translateX(0px)' },
+        config: { duration: 600 },
+    });
+
+    const slideBottom = useSpring({
+        from: { transform: 'translateY(-100px)' },
+        to: { transform: 'translateY(0px)' },
+        config: { duration: 900 },
+    });
+
+    const slideLeft = useSpring({
+        from: { transform: 'translateX(100px)' },
+        to: { transform: 'translateX(0px)' },
+        config: { duration: 600 },
+    });
+
     return (
-        <div className='flex flex-col max-w-xs gap-3 mx-auto'>
-            <a href='https://sammidev.codes' className='relative block group'>
-                <img
-                    src={Sammi}
-                    alt='sammi'
-                    className='h-[350px] w-full group-hover:scale-95 object-cover transition rounded-lg duration-500 group-hover:opacity-90 sm:h-[450px]'
-                />
-
-                <div className='absolute inset-0 flex flex-col items-start justify-end p-6'>
-                    <h3 className='text-xl font-medium text-white'>
-                        Sammi Aldhi Yanto
-                    </h3>
-
-                    <span className='mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase border border-pink-500 rounded-lg tracking-wide text-white'>
-                        Software Engineer
+        <div className='flex my-12 max-w-xs px-3 gap-3 mx-auto'>
+            <animated.a
+                style={{ ...slideRight }}
+                target={'_blank noopener noreferrer'}
+                href='https://sammidev.codes'
+                className='relative block group'
+            >
+                <img src={Willy} alt='willy' className={photoClass} />
+                <div className='absolute inset-0 group-hover:flex flex-col items-start justify-end p-2 hidden'>
+                    <span className='mt-2 inline-block bg-black p-1 text-xs  text-white'>
+                        Mr. Wil
                     </span>
                 </div>
-            </a>{' '}
-            <a href='/' className='relative block group'>
-                <img
-                    src={Willy}
-                    alt='Willy'
-                    className='h-[350px] w-full group-hover:scale-95 object-cover transition rounded-lg duration-500 group-hover:opacity-90 sm:h-[450px]'
-                />
-
-                <div className='absolute inset-0 flex flex-col items-start justify-end p-6'>
-                    <h3 className='text-xl font-medium text-white'>
-                        Willy Astra
-                    </h3>
-
-                    <span className='mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase border-pink-500 border rounded-lg tracking-wide text-white'>
-                        Technician
+            </animated.a>
+            <animated.a
+                style={{ ...slideBottom }}
+                target={'_blank noopener noreferrer'}
+                href='https://sammidev.codes'
+                className='relative block group'
+            >
+                <img src={Sammi} alt='sammi' className={photoClass} />
+                <div className='absolute inset-0 group-hover:flex flex-col items-start justify-end p-2 hidden'>
+                    <span className='mt-2 inline-block bg-black p-1 text-xs  text-white'>
+                        Mr. Sam
                     </span>
                 </div>
-            </a>{' '}
-            <a href='/' className='relative block group'>
-                <img
-                    src={Faren}
-                    alt='Faren'
-                    className='h-[350px] w-full object-cover group-hover:scale-95 transition rounded-lg duration-500 group-hover:opacity-90 sm:h-[450px]'
-                />
-
-                <div className='absolute inset-0 flex flex-col items-start justify-end p-6'>
-                    <h3 className='text-xl font-medium text-white'>
-                        M Fachren
-                    </h3>
-
-                    <span className='mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase border-pink-500 border rounded-lg tracking-wide text-white'>
-                        Software Engineer
+            </animated.a>
+            <animated.a
+                style={{ ...slideLeft }}
+                target={'_blank noopener noreferrer'}
+                href='https://sammidev.codes'
+                className='relative block group'
+            >
+                <img src={Faren} alt='faren' className={photoClass} />
+                <div className='absolute inset-0 group-hover:flex flex-col items-start justify-end p-2 hidden'>
+                    <span className='mt-2 inline-block bg-black p-1 text-xs  text-white'>
+                        Mr. Ren
                     </span>
                 </div>
-            </a>
+            </animated.a>
         </div>
     );
 }

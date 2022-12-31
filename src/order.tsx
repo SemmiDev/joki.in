@@ -16,14 +16,14 @@ function Order() {
     }, []);
 
     const slideIn = useSpring({
-        from: { x: 0, y: 0, scale: 0 },
+        from: { x: 0.7, y: 0.7, scale: 0.7 },
         to: { x: 0, y: 0, scale: 1 },
-        config: { duration: 500 },
+        config: { duration: 200 },
     });
 
     return (
         <>
-            <Navbar active='order' />
+            <Navbar />
             <animated.div
                 style={{
                     transform: interpolate(
@@ -45,7 +45,7 @@ function Order() {
                         // open in new tab
                         window.open(url, '_blank');
                     }}
-                    className='flex flex-col gap-2 p-2 border shadow-2xl border-1 rounded-xl border-secondary/40 shadow-secondary/40'
+                    className='flex flex-col gap-2 p-2 border max-w-sm mx-auto shadow-2xl border-1 rounded-xl border-secondary/40 shadow-secondary/40'
                 >
                     <input
                         type='text'
