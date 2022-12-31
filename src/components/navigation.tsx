@@ -12,7 +12,7 @@ function Navigation({ active = 'home' }) {
                     <span className={`text-xs ${homeTextColor}`}>Home</span>
                 </a>
                 <a href='/order' className='flex flex-col items-center gap-2'>
-                    <OrderIcon active={active} />
+                    <OrderIcon />
                     <span className={`text-xs ${orderTextColor}`}>Order</span>
                 </a>
             </div>
