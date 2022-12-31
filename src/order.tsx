@@ -57,7 +57,6 @@ function Order() {
                         onChange={(e) => setTitle(e.target.value)}
                     />
                     <textarea
-                        type='text'
                         className='p-2 text-black bg-white placeholder:text-sm textarea textarea-secondary textarea-bordered'
                         placeholder='Tulis deskripsi aplikasi (requirements / fitur, deadline, dll)'
                         required={true}
