@@ -23,7 +23,6 @@ function Order() {
 
     return (
         <>
-            <Navbar />
             <animated.div
                 style={{
                     transform: interpolate(
@@ -76,13 +75,7 @@ function Order() {
                         <option value='Jasa Instalasi'>Jasa Instalasi</option>
                     </select>
                     <button
-                        onClick={() => {
-                            let url =
-                                'https://api.whatsapp.com/send?phone=6282387325971&text=';
-                            const text = `Halo kak, saya mau joki ${title} [${category}] ➜ ${description}`;
-                            const encodedText = encodeURIComponent(text);
-                            window.open(url + encodedText);
-                        }}
+                        type='submit'
                         className='flex justify-center w-full gap-2 text-white bg-green-600 btn'
                     >
                         <svg

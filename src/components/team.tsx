@@ -7,27 +7,26 @@ function Team() {
     const slideRight = useSpring({
         from: { transform: 'translateX(-100px)' },
         to: { transform: 'translateX(0px)' },
-        config: { duration: 600 },
+        config: { duration: 900 },
     });
 
     const slideBottom = useSpring({
         from: { transform: 'translateY(-100px)' },
         to: { transform: 'translateY(0px)' },
-        config: { duration: 900 },
+        config: { duration: 1000 },
     });
 
     const slideLeft = useSpring({
         from: { transform: 'translateX(100px)' },
         to: { transform: 'translateX(0px)' },
-        config: { duration: 600 },
+        config: { duration: 900 },
     });
 
     return (
         <div className='flex my-12 max-w-xs px-3 gap-3 mx-auto'>
             <animated.a
                 style={{ ...slideRight }}
-                target={'_blank noopener noreferrer'}
-                href='https://sammidev.codes'
+                href='#'
                 className='relative block group'
             >
                 <img src={Willy} alt='willy' className={photoClass} />
@@ -52,8 +51,7 @@ function Team() {
             </animated.a>
             <animated.a
                 style={{ ...slideLeft }}
-                target={'_blank noopener noreferrer'}
-                href='https://sammidev.codes'
+                href='#'
                 className='relative block group'
             >
                 <img src={Faren} alt='faren' className={photoClass} />

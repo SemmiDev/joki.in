@@ -7,7 +7,6 @@ import Team from './components/team';
 function Home(): JSX.Element {
     return (
         <>
-            <Navbar />
             <Hero />
             <Services />
             <Team />

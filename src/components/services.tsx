@@ -22,6 +22,7 @@ const languages = [
     'ML',
     'Kotlin',
     'RESTful',
+    'Pelatihan',
 ];
 
 const services = [
